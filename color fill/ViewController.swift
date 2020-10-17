@@ -32,25 +32,31 @@ class ViewController: UIViewController {
         greenValueLabel.text = String(greenSlider.value)
         blueValueLabel.text = String(blueSlider.value)
        
+        
     }
 
     @IBAction func redSliderAction() {
         let redValue = CGFloat(redSlider.value)
+        let greenValue = CGFloat(greenSlider.value)
+        let blueValue = CGFloat(blueSlider.value)
         redValueLabel.text = String(round(100*redSlider.value)/100)
-        //currentColorView.tintColor = UIColor.red.withAlphaComponent(redValue)
-       // currentColorView.tintColor = UIColor(displayP3Red: 0.33, green: 0.33, blue: 0.33, alpha: redValue)
+        currentColorView.tintColor = UIColor(displayP3Red: redValue, green: greenValue, blue: blueValue, alpha: redValue)
     }
     
     @IBAction func greenSliderAction() {
+        let redValue = CGFloat(redSlider.value)
         let greenValue = CGFloat(greenSlider.value)
+        let blueValue = CGFloat(blueSlider.value)
         greenValueLabel.text = String(round(100*greenSlider.value)/100)
-        //currentColorView.tintColor = UIColor(displayP3Red: 0.33, green: 0.33, blue: 0.33, alpha: greenValue)
+        currentColorView.tintColor = UIColor(displayP3Red: redValue, green: greenValue, blue: blueValue, alpha: greenValue)
     }
     
     @IBAction func blueSliderAction() {
+        let redValue = CGFloat(redSlider.value)
+        let greenValue = CGFloat(greenSlider.value)
         let blueValue = CGFloat(blueSlider.value)
         blueValueLabel.text = String(round(100*blueSlider.value)/100)
-       // currentColorView.tintColor = UIColor(displayP3Red: 0.33, green: 0.33, blue: 0.33, alpha: blueValue)
+        currentColorView.tintColor = UIColor(displayP3Red: redValue, green: greenValue, blue: blueValue, alpha: blueValue)
     }
     
 }
